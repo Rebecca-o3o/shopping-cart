@@ -1,0 +1,34 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "indent": [
+      "error", 2, {
+        "SwitchCase": 2
+      }
+    ],
+    "semi": [
+      "warn",
+      "never"
+    ],
+    "no-console": 0,
+    "no-inner-declarations": 0,
+    "no-sparse-arrays": 0,
+    "no-unexpected-multiline": 0,
+    "no-unsafe-finally": 0
+  },
+  "globals": {
+    "$": false
+  }
+}
