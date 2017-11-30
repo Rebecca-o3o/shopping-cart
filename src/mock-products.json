@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Gießkanne",
+    "price": 9.99,
+    "image": "images/giesskanne.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Gartenschere",
+    "price": 14.99,
+    "image": "images/gartenschere.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Grabegabel",
+    "price": 29.99,
+    "image": "images/grabegabel.jpg"
+  }
+]
