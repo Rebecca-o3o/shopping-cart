@@ -1,0 +1,6 @@
+.cart-container {
+  position: relative;
+  top: 80px;
+  border: 1px solid black;
+  float: right;
+}
