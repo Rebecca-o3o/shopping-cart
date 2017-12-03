@@ -50,7 +50,7 @@ export default class Product extends Component {
           <div className="product-id">Artikel-Nr.: {product.id}</div>
         </div>
 
-        <div className="product-price">{product.price}</div>
+        <div className="product-price">{product.price.toLocaleString('de-DE', { maximumFractionDigits: 2 }) }</div>
 
         <button
           className="order-btn"
