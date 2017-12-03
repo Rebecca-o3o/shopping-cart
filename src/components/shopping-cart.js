@@ -13,17 +13,19 @@ export default class ShoppingCart extends Component {
     const {closeCartView, itemsInCart} = this.props
 
     // TODO: add each newItem only once
+    // TODO: add quantity changer
     const CartItems = itemsInCart.map((newItem) =>
 
       <li
-        key={newItem.id}>
+        key={newItem.id}
+        className="cart-item-row">
 
         <div>
-          <div>{newItem.name}</div>
-          <div>Artikel-Nr.: {newItem.id}</div>
+          <div className="cart-item-name">{newItem.name}</div>
+          <div className="product-id">Artikel-Nr.: {newItem.id}</div>
         </div>
 
-        <div>{newItem.price}</div>
+        <div className="cart-item-price">{newItem.price}</div>
       </li>
     )
 
@@ -40,9 +42,10 @@ export default class ShoppingCart extends Component {
           <button className='apply-discount'>Anwenden</button>
         </div>
 
-        <div className='cart-summary'>
+        <span className='cart-summary'>
           Gesamtpreis:
-        </div>
+          <span className="cart-item-price"> 0.00</span>
+        </span>
         <button className='cart-payment-btn'>
           Zur Kasse
         </button>
