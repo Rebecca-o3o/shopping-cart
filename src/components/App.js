@@ -12,29 +12,74 @@ class App extends Component {
     super(props)
 
     this.state = {
+      modalIsShown: false,
       itemsInCart: {}
     }
     this.addToCart = this.addToCart.bind(this)
+    this.toggleCartView = this.toggleCartView.bind(this)
+    this.openCartView = this.openCartView.bind(this)
+    this.closeCartView = this.closeCartView.bind(this)
   }
 
   addToCart(id, name, price) {
+    //add items to cart
+    let newItem = "test"
+    const itemsInCart = { ...this.state.itemsInCart, newItem };
+
     this.setState({
-      itemsInCart: {
-        id: id,
-        name: name,
-        price: price
-      }
+      itemsInCart,
+      modalIsShown: true
+     });
+  }
+
+  openCartView(){
+    this.setState({
+      modalIsShown: true
+    })
+  }
+
+  closeCartView(){
+    this.setState({
+      modalIsShown: false
+    })
+  }
+
+  toggleCartView(){
+    const toggleModal = this.state.modalIsShown ? false : true
+    this.setState({
+      modalIsShown: toggleModal
     })
   }
 
   render() {
+
+    const {modalIsShown, itemsInCart} = this.state
+
     return (
-      <div>
-        <header className="App-header">
+      <div className="app-body">
+        <header className="app-header">
           Shopping Cart Calculator
+
+          <img
+            src="images/shopping-cart.svg"
+            alt="Cart Icon"
+            className="cart-icon"
+            onClick={this.toggleCartView}/>
+
         </header>
-        <ProductList onClick={this.addToCart}/>
-        <ShoppingCart itemsInCart={this.state.itemsInCart}/>
+
+        <ProductList
+          addToCart={this.addToCart}/>
+
+        {
+          modalIsShown &&
+          <ShoppingCart
+            itemsInCart={itemsInCart}
+            closeCartView={this.closeCartView}
+            openCartView={this.openCartView}
+          />
+        }
+
       </div>
     )
   }

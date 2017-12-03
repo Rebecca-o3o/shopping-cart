@@ -1,5 +1,9 @@
-.App-header {
-  background-color: #222;
+.app-body {
+  background-color: ghostwhite;
+}
+
+.app-header {
+  background-color: #292F36;
   padding: 20px;
   color: white;
   font-weight: bold;
@@ -8,3 +12,28 @@
   width: 100%;
   z-index: 100;
 }
+
+
+.cart-icon {
+  max-height: 25px;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.cart-icon:hover {
+  transform: scale(1.5);
+  transition: transform 200ms ease-in;
+}
+
+.cart-icon-animate {
+  transform: scale(1.5);
+  transition: transform 200ms ease-in;
+}
+
+
+/*
+$color1: #292F36;
+$color2: #4ECDC4;
+$color3: #F7FFF7;
+$color4: #FF6B6B;
+$color5: #FFE66D;*/

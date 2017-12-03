@@ -1,6 +1,22 @@
 .cart-container {
-  position: relative;
-  top: 80px;
-  border: 1px solid black;
-  float: right;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  border: 1px solid #292F36;
+  background-color: #F7FFF7;
+  z-index: 999;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+.cart-payment-btn {
+  padding: 16px;
+  width: 90%;
+  border: #292F36 solid 1px;
+  background-color: #FF9E9E;
+  cursor: pointer;
+}
+
+.cart-payment-btn:hover {
+  background-color: #FF6B6B;
 }

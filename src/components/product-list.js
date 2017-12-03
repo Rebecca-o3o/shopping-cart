@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Product from './product'
+import PropTypes from 'prop-types'
 
 export default class ProductList extends Component {
 
@@ -20,10 +21,15 @@ export default class ProductList extends Component {
   render(){
 
     return (
-      <div className="products-wrapper">
-        <Product items={this.state.products}/>
-      </div>
+      <Product
+        items={this.state.products}
+        addToCart={this.props.addToCart}/>
     )
   }
 
+}
+
+
+ProductList.propTypes = {
+  addToCart: PropTypes.func
 }
