@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       modalIsShown: false,
-      itemsInCart: {}
+      itemsInCart: []
     }
     this.addToCart = this.addToCart.bind(this)
     this.toggleCartView = this.toggleCartView.bind(this)
@@ -21,15 +21,16 @@ class App extends Component {
     this.closeCartView = this.closeCartView.bind(this)
   }
 
-  addToCart(id, name, price) {
-    //add items to cart
-    let newItem = "test"
-    const itemsInCart = { ...this.state.itemsInCart, newItem };
+  addToCart(newItem) {
+    // console.log(newItem)
+    let cartItem = this.state.itemsInCart
 
+    cartItem.push(newItem)
+    // FIXME: setState() does not always immediately update the component
     this.setState({
-      itemsInCart,
+      itemsInCart: cartItem,
       modalIsShown: true
-     });
+    })
   }
 
   openCartView(){

@@ -11,16 +11,28 @@ export default class ShoppingCart extends Component {
   render(){
 
     const {closeCartView, itemsInCart} = this.props
-    console.log (itemsInCart)
+
+    // TODO: add each newItem only once
+    const CartItems = itemsInCart.map((newItem) =>
+
+      <li
+        key={newItem.id}>
+
+        <div>
+          <div>{newItem.name}</div>
+          <div>Artikel-Nr.: {newItem.id}</div>
+        </div>
+
+        <div>{newItem.price}</div>
+      </li>
+    )
 
     return (
       <div className="cart-container">
-        Dein Warenkorb
-
-
         <div className="close-modal" onClick={closeCartView}>X</div>
         <div className='cart-items'>
-          cart-items!!!
+          {CartItems}
+          {/*<div className='item-total'>{this.calculateTotal(this.props.total)}</div> */}
         </div>
 
         <div className='cart-discount'>
@@ -43,4 +55,5 @@ export default class ShoppingCart extends Component {
 
 ShoppingCart.propTypes = {
   closeCartView: PropTypes.func,
+  itemsInCart: PropTypes.array
 }
