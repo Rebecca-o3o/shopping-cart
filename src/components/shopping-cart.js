@@ -24,7 +24,6 @@ export default class ShoppingCart extends Component {
           <div className="cart-item-id">Artikel-Nr.: {newItem.id}</div>
         </div>
 
-
         <div className="cart-item-price">{newItem.price.toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</div>
       </li>
     )
@@ -43,8 +42,8 @@ export default class ShoppingCart extends Component {
         </div>
 
         <span className='cart-summary'>
-          Gesamtpreis:
-          <span className="cart-item-price"> 0.00</span>
+          Gesamtpreis ({this.props.totalItems} Artikel):
+          <span className="cart-item-price"> {this.props.totalAmount.toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</span>
         </span>
         <button className='cart-payment-btn'>
           Zur Kasse
@@ -58,5 +57,7 @@ export default class ShoppingCart extends Component {
 
 ShoppingCart.propTypes = {
   closeCartView: PropTypes.func,
-  itemsInCart: PropTypes.array
+  itemsInCart: PropTypes.array,
+  totalAmount: PropTypes.number,
+  totalItems: PropTypes.number
 }
