@@ -5,28 +5,16 @@ import PropTypes from 'prop-types'
 export default class Product extends Component {
   constructor(props){
     super(props)
-    this.state={
-      newItem: {}
-    }
     this.handleOrderButton = this.handleOrderButton.bind(this)
   }
 
   handleOrderButton(e, id, name, price){
-    // FIXME: first click toggles previously clicked product
-
     //change buttonLabel:
     e.preventDefault()
     e.target.innerText = "Im Warenkorb"
 
     //send product props:
-    this.setState({
-      newItem: {
-        id: id,
-        name: name,
-        price: price
-      }
-    })
-    this.props.addToCart(this.state.newItem)
+    this.props.addToCart({id, name, price})
   }
 
 
@@ -50,7 +38,7 @@ export default class Product extends Component {
           <div className="product-id">Artikel-Nr.: {product.id}</div>
         </div>
 
-        <div className="product-price">{product.price.toLocaleString('de-DE', { maximumFractionDigits: 2 }) }</div>
+        <div className="product-price">{product.price.toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 2 }) }</div>
 
         <button
           className="order-btn"

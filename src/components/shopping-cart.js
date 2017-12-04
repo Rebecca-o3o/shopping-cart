@@ -20,12 +20,12 @@ export default class ShoppingCart extends Component {
         key={newItem.id}
         className="cart-item-row">
 
-        <div>
-          <div className="cart-item-name">{newItem.name}</div>
-          <div className="product-id">Artikel-Nr.: {newItem.id}</div>
+        <div className="cart-item-name">{newItem.name}
+          <div className="cart-item-id">Artikel-Nr.: {newItem.id}</div>
         </div>
 
-        <div className="cart-item-price">{newItem.price}</div>
+
+        <div className="cart-item-price">{newItem.price.toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</div>
       </li>
     )
 

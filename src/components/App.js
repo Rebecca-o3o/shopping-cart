@@ -22,15 +22,11 @@ class App extends Component {
   }
 
   addToCart(newItem) {
-    // console.log(newItem)
-    let cartItem = this.state.itemsInCart
-
-    cartItem.push(newItem)
-    // FIXME: setState() does not always immediately update the component
-    this.setState({
-      itemsInCart: cartItem,
-      modalIsShown: true
-    })
+    // FIXME: unneccesary states
+    this.state.itemsInCart.push(newItem)
+    this.setState(
+      this.state.itemsInCart
+    )
   }
 
   openCartView(){
