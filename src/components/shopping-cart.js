@@ -10,9 +10,15 @@ export default class ShoppingCart extends Component {
     this.updateDiscountState = this.updateDiscountState.bind(this)
   }
 
-  updateDiscountState(updatedDiscount){
-    // TODO: calculate new total after discount
+  async updateDiscountState(updatedDiscount){
     console.log(updatedDiscount)
+    this.setState({
+      discountCode: updatedDiscount.discountCode,
+      discountValue: updatedDiscount.discountValue,
+      discountType: updatedDiscount.discountType
+      }
+    )
+    // TODO: calculate new total after discount
   }
 
   render(){
