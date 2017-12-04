@@ -1,11 +1,18 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import Discount from './discount'
 
 export default class ShoppingCart extends Component {
 
   constructor(props){
     super(props)
     this.state = {}
+    this.updateDiscountState = this.updateDiscountState.bind(this)
+  }
+
+  updateDiscountState(updatedDiscount){
+    // TODO: calculate new total after discount
+    console.log(updatedDiscount)
   }
 
   render(){
@@ -36,10 +43,7 @@ export default class ShoppingCart extends Component {
           {/*<div className='item-total'>{this.calculateTotal(this.props.total)}</div> */}
         </div>
 
-        <div className='cart-discount'>
-          <input className='discount__field' type='text' name='discount' defaultValue='Gutscheincode'/>
-          <button className='apply-discount'>Anwenden</button>
-        </div>
+        <Discount updateDiscountState={this.updateDiscountState}/>
 
         <span className='cart-summary'>
           Gesamtpreis ({this.props.totalItems} Artikel):

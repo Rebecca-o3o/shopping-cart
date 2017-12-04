@@ -45,11 +45,19 @@
 .cart-discount,
 .cart-summary {
   border-top: 1px solid #292F36;
-  margin-top: 5px;
+  padding: 5px 0;
 }
 
 .apply-discount {
   float: right;
+}
+
+.cart-discount-value {
+  float: right;
+  font-style: italic;
+}
+.cart-discount-value:after{
+  content: " EUR";
 }
 
 .cart-summary {
